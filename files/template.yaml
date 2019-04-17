@@ -1,0 +1,16 @@
+{{#if vpc}}
+{{#if vpc.new}}
+EndpointKMS:
+  Type: "AWS::EC2::VPCEndpoint"
+  Properties:
+    VpcId:
+      Ref: VPC
+    ServiceName: com.amazonaws.{{region}}.secretsmanager
+    VpcEndpointType: Interface
+    PrivateDnsEnabled: true
+    SubnetIds:
+      "Fn::Split" : [ ",", {"Ref": Subnets} ]
+    SecurityGroupIds:
+      "Fn::Split" : [ ",", {"Ref": SecurityGroups} ]
+{{/if}}
+{{/if}}

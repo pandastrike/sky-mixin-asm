@@ -1,0 +1,9 @@
+type: object
+additionalProperties: false
+properties:
+  secrets:
+    description: >
+      List of secret names within AWS Secrets Manager.
+    type: array
+    items:
+      type: string
