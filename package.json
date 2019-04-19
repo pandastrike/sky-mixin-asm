@@ -1,6 +1,6 @@
 {
   "name": "sky-mixin-asm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sky mixin for the AWS Secrets Manager",
   "main": "build/npm/src/index.js",
   "files": [

@@ -1,6 +1,6 @@
 {{#if vpc}}
 {{#if vpc.new}}
-EndpointKMS:
+EndpointASM:
   Type: "AWS::EC2::VPCEndpoint"
   Properties:
     VpcId:
