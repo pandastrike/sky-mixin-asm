@@ -1,16 +1,29 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Panda Sky Mixin - ASM
 {{#if vpc}}
-{{#if vpc.new}}
-EndpointASM:
-  Type: "AWS::EC2::VPCEndpoint"
-  Properties:
-    VpcId:
-      Ref: VPC
-    ServiceName: com.amazonaws.{{region}}.secretsmanager
-    VpcEndpointType: Interface
-    PrivateDnsEnabled: true
-    SubnetIds:
-      "Fn::Split" : [ ",", {"Ref": Subnets} ]
-    SecurityGroupIds:
-      "Fn::Split" : [ ",", {"Ref": SecurityGroups} ]
+Parameters:
+  VPC:
+    Type: String
+  Subnets:
+    Type: String
+  AvailabilityZones:
+    Type: String
+  SecurityGroups:
+    Type: String
+  RouteTables:
+    Type: String
 {{/if}}
-{{/if}}
+
+Resources:
+
+  {{#if vpc}}
+  EndpointASM:
+    Type: "AWS::EC2::VPCEndpoint"
+    Properties:
+      VpcId: !Ref VPC
+      ServiceName: com.amazonaws.{{region}}.secretsmanager
+      VpcEndpointType: Interface
+      PrivateDnsEnabled: true
+      SubnetIds: !Split [ ",", !Ref Subnets ]
+      SecurityGroupIds: !Split [ ",", !Ref SecurityGroups ]
+  {{/if}}

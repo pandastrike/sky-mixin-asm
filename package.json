@@ -1,6 +1,6 @@
 {
   "name": "sky-mixin-asm",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Sky mixin for the AWS Secrets Manager",
   "main": "build/npm/src/index.js",
   "files": [
@@ -37,14 +37,14 @@
   },
   "homepage": "https://github.com/pandastrike/sky-mixin-asm#readme",
   "dependencies": {
+    "ajv": "^6.10.2",
     "panda-garden": "^3.2.0",
-    "panda-generics": "^4.2.0",
     "panda-parchment": "^4.2.0",
-    "panda-quill": "^3.4.1",
-    "panda-river": "^4.4.0",
+    "panda-quill": "^3.4.5",
+    "panda-river": "^4.4.2",
     "panda-serialize": "^0.4.0",
-    "panda-sky-mixin": "0.0.4",
-    "sundog": "^3.0.15"
+    "panda-template": "^1.1.0",
+    "sundog": "^4.0.0"
   },
   "devDependencies": {
     "panda-9000": "^4.4.0",
